@@ -1,0 +1,22 @@
+<h1><%= @task.title %></h1>
+
+<div>
+<%= @task.details %>
+</div>
+
+<br>
+
+<% if @task.completed %>
+ <div>✅ This task is completed</div>
+<% else %>
+ <div>❌ This task is not completed yet</div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "🔙 All tasks", tasks_path %> ||
+  <%= link_to "✏️ Edit", edit_task_path(@task) %> ||
+  <%= link_to "🗑 Delete", task_path(@task), method: :delete %>
+</div>
+
